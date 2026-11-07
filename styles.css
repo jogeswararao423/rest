@@ -1,0 +1,371 @@
+/* Savoria Luxury Restaurant - Main Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --color-gold: #d4af37;
+  --color-gold-light: #f5d77f;
+  --color-gold-dark: #aa820a;
+  --color-bg-dark: #0b0c10;
+  --color-brown-dark: #120e0a;
+  --color-brown-surface: #1c1510;
+  --color-cream-light: #fdfbf7;
+  --color-cream-muted: #e8dcce;
+  --color-surface: #12151b;
+  --color-surface-card: #181c24;
+  --color-surface-border: #262c37;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for sticky header */
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-bg-dark);
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* About Us Section Custom Cream & Dark Brown Styles */
+.about-section-bg {
+  background: radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+              linear-gradient(180deg, #100c09 0%, #18120d 50%, #110d09 100%);
+}
+
+.about-brown-card {
+  background: rgba(28, 20, 15, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-brown-card:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.8);
+}
+
+.cream-text-main {
+  color: #fdfbf7;
+}
+
+.cream-text-body {
+  color: #e5dac9;
+}
+
+.cream-text-muted {
+  color: #baab96;
+}
+
+/* Floating Gold Seal "Since 2010" Badge */
+.gold-seal-badge {
+  background: linear-gradient(135deg, #1e1610 0%, #2b1f15 100%);
+  border: 2px solid #d4af37;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 16px rgba(212, 175, 55, 0.3);
+}
+
+/* Indian Veg / Non-Veg FSSAI Badges */
+.veg-indicator {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #22c55e;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 197, 94, 0.1);
+  flex-shrink: 0;
+}
+.veg-indicator::after {
+  content: '';
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 9999px;
+  background: #22c55e;
+}
+
+.non-veg-indicator {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #ef4444;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(239, 68, 68, 0.1);
+  flex-shrink: 0;
+}
+.non-veg-indicator::after {
+  content: '';
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 9999px;
+  background: #ef4444;
+}
+
+/* Menu Category Pill Scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Sticky Header Scrolled State */
+.nav-scrolled {
+  background: rgba(11, 12, 16, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.22) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Nav Link Hover & Active Underline Indicator */
+.nav-item-link {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  border-radius: 9999px;
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.nav-item-link:hover::after {
+  width: 70%;
+}
+
+.nav-item-link.active {
+  color: #f5d77f !important;
+  font-weight: 600;
+}
+
+.nav-item-link.active::after {
+  width: 80% !important;
+  background: linear-gradient(90deg, #d4af37, #f5d77f, #d4af37);
+  height: 2px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.85);
+}
+
+/* Highlighted "Order Online" / "Order Now" Button */
+.btn-order-online, .btn-gold {
+  background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa820a 100%);
+  color: #0b0c10;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.28);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-order-online::before, .btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-order-online:hover, .btn-gold:hover {
+  background: linear-gradient(135deg, #fae29c 0%, #e0bd49 50%, #b88f15 100%);
+  box-shadow: 0 6px 26px rgba(212, 175, 55, 0.45);
+  transform: translateY(-1.5px);
+}
+
+.btn-order-online:hover::before, .btn-gold:hover::before {
+  left: 100%;
+}
+
+.btn-order-online:active, .btn-gold:active {
+  transform: translateY(0);
+}
+
+/* Outline Gold Button */
+.btn-gold-outline {
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  color: #f5d77f;
+  background: rgba(212, 175, 55, 0.05);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #d4af37;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+  transform: translateY(-1.5px);
+}
+
+/* Luxury Glass Card */
+.glass-card {
+  background: rgba(24, 28, 36, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fae29c 0%, #d4af37 50%, #aa820a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Hamburger Lines */
+.hamburger-line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger-active .line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-active .line-2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-active .line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Drawer Backdrop */
+.drawer-backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0c10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262c37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Badge styles */
+.badge-diet {
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 9999px;
+}
+
+.badge-chef {
+  background: rgba(212, 175, 55, 0.2);
+  color: #f5d77f;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.badge-vegan {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-gluten-free {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Category Filter Buttons Active & Hover States */
+.menu-category-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+.menu-category-btn.active {
+  background: linear-gradient(135deg, #f5d77f 0%, #d4af37 50%, #aa820a 100%) !important;
+  color: #0b0c10 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.35) !important;
+  transform: translateY(-2px);
+}
+.menu-category-btn.active span[class*="rounded-full"] {
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #0b0c10 !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Interactive Compact Food Item Cards */
+.menu-food-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
+  will-change: transform;
+}
+.menu-food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.75), 0 0 20px rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.45) !important;
+}
+
+/* Equal Height & Spacing Utility for 4-Column Grid */
+.menu-category-block {
+  scroll-margin-top: 100px;
+}
+

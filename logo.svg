@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" class="w-full h-full">
+  <defs>
+    <!-- Rich Metallic Gold Gradient -->
+    <linearGradient id="savoriaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEBA6" />
+      <stop offset="35%" stop-color="#E5C053" />
+      <stop offset="70%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9A7B1C" />
+    </linearGradient>
+    <!-- Subtle Inner Glow Filter -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#d4af37" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Concentric Ring -->
+  <circle cx="50" cy="50" r="46" stroke="url(#savoriaGold)" stroke-width="1.2" stroke-opacity="0.5" />
+  
+  <!-- Dashed Luxury Inner Ring -->
+  <circle cx="50" cy="50" r="42" stroke="url(#savoriaGold)" stroke-width="0.8" stroke-dasharray="2 3" stroke-opacity="0.75" />
+
+  <!-- Four Cardinal Accent Diamonds -->
+  <polygon points="50,6 52,8 50,10 48,8" fill="url(#savoriaGold)" />
+  <polygon points="50,90 52,92 50,94 48,92" fill="url(#savoriaGold)" />
+  <polygon points="6,50 8,48 10,50 8,52" fill="url(#savoriaGold)" />
+  <polygon points="90,50 92,48 94,50 92,52" fill="url(#savoriaGold)" />
+
+  <!-- Heraldic Crown / Star on Top -->
+  <path d="M50 17 L52.2 21.5 L57 22.2 L53.5 25.6 L54.3 30.4 L50 28.1 L45.7 30.4 L46.5 25.6 L43 22.2 L47.8 21.5 Z" fill="url(#savoriaGold)" filter="url(#goldGlow)" />
+
+  <!-- Graceful Monogram S -->
+  <path d="M57.5 37.5 C55 35 52 34 47.5 34 C41 34 36.5 37.5 36.5 42.5 C36.5 47 40 49.5 45.5 51.5 L48 52.5 C54 54.5 58 57.5 58 63.5 C58 70 52.5 74 45 74 C39 74 34.5 71.5 32 67 L36 64 C38 67 41 68.5 45 68.5 C49.5 68.5 53 66 53 62.5 C53 58.5 50 56.5 44 54.5 L41.5 53.5 C35.5 51.5 32 48 32 42.5 C32 35.5 38 30 47.5 30 C53 30 57.5 32.5 60.5 36 Z" fill="url(#savoriaGold)" filter="url(#goldGlow)" />
+
+  <!-- Laurel Base Embellishments -->
+  <path d="M37 77 C41 80 46 81 50 81 C54 81 59 80 63 77" stroke="url(#savoriaGold)" stroke-width="1.2" stroke-linecap="round" fill="none" />
+  <circle cx="50" cy="81" r="1.5" fill="url(#savoriaGold)" />
+</svg>
